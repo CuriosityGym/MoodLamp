@@ -33,7 +33,7 @@ def cgmqtt():
 	response=""
 	data=str(request.data)
 	#data="Hi I Like this Lamp #red#blue#green"
-	sys.stdout.write(data + "\n")
+	sys.stdout.write("Data:" + data + "\n")
 	#response=response+data+"<br>"
 	foundColours=""
 	matchobj= findHashTag('violet')(data)
@@ -71,7 +71,7 @@ def cgmqtt():
 		foundColours=foundColours+"red: "	
 		client.publish(topicName+"/red", True)
 		
-	sys.stdout.write(foundColours + "\n")	
+	sys.stdout.write("Colours are: "+foundColours + "\n")	
 	return (str(0))
 	
 	
