@@ -23,7 +23,7 @@ def on_connect(client, userdata, flags, rc):
 
 	
 
-@app.route("/", methods=["POST"])	
+@app.route("/", methods=["GET"])	
 def cgmqtt():
 	
 	client = mqtt.Client()
@@ -31,7 +31,7 @@ def cgmqtt():
 	client.connect("iot.eclipse.org", 1883, 60)
 	client.loop_start()
 	
-	data=str(request.data)
+	data=request.args.get('tweetbody')
 	#data="Hi I Like this Lamp #red#blue#green"
 	#print (data)
 	
