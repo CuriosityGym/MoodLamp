@@ -31,7 +31,7 @@ def cgmqtt():
 	client.connect("iot.eclipse.org", 1883, 60)
 	client.loop_start()
 	response=""
-	data=request.values.get('tweetbody')
+	data=str(request.data)
 	#data="Hi I Like this Lamp #red#blue#green"
 	#print (data)
 	response=response+data+"<br>"
