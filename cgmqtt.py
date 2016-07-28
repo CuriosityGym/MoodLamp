@@ -64,7 +64,7 @@ def cgmqtt():
 	if matchobj:
 		foundColours=foundColours+"red: "	
 		
-	return ("foundColours: "+foundColours)
+	#return ("foundColours: "+foundColours)
 	
 	
 	
