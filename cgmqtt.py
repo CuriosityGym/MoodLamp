@@ -1,4 +1,4 @@
-import os
+import os, sys
 from flask import Flask
 from flask import request
 import re
@@ -33,8 +33,8 @@ def cgmqtt():
 	response=""
 	data=str(request.data)
 	#data="Hi I Like this Lamp #red#blue#green"
-	#print (data)
-	response=response+data+"<br>"
+	sys.stdout.write(data + "\n")
+	#response=response+data+"<br>"
 	foundColours=""
 	matchobj= findHashTag('violet')(data)
 	if matchobj:
@@ -71,8 +71,8 @@ def cgmqtt():
 		foundColours=foundColours+"red: "	
 		client.publish(topicName+"/red", True)
 		
-	response=response+foundColours+"<br>"	
-	return (response)
+	sys.stdout.write(foundColours + "\n")	
+	return (str(0))
 	
 	
 	
