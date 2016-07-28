@@ -31,42 +31,42 @@ def cgmqtt():
 	client.connect("iot.eclipse.org", 1883, 60)
 	client.loop_start()
 	response=""
-	data=request.data
+	tweetcontent=request.data
 	#data="Hi I Like this Lamp #red#blue#green"
-	sys.stdout.write("Data:\n")
+	sys.stdout.write(tweetcontent)
 	#response=response+data+"<br>"
 	foundColours=""
-	matchobj= findHashTag('violet')(data)
+	matchobj= findHashTag('violet')(tweetcontent)
 	if matchobj:
 		foundColours=foundColours+"violet: "
 		client.publish(topicName+"/violet", True)		
 
-	matchobj= findHashTag('indigo')(data)
+	matchobj= findHashTag('indigo')(tweetcontent)
 	if matchobj:
 		foundColours=foundColours+"indigo: "
 		client.publish(topicName+"/indigo", True)
 
-	matchobj= findHashTag('blue')(data)
+	matchobj= findHashTag('blue')(tweetcontent)
 	if matchobj:
 		foundColours=foundColours+"blue: "
 		client.publish(topicName+"/blue", True)
 
-	matchobj= findHashTag('green')(data)
+	matchobj= findHashTag('green')(tweetcontent)
 	if matchobj:
 		foundColours=foundColours+"green: "
 		client.publish(topicName+"/green", True)
 
-	matchobj= findHashTag('yellow')(data)
+	matchobj= findHashTag('yellow')(tweetcontent)
 	if matchobj:
 		foundColours=foundColours+"yellow: "
 		client.publish(topicName+"/yellow", True)
 
-	matchobj= findHashTag('orange')(data)
+	matchobj= findHashTag('orange')(tweetcontent)
 	if matchobj:
 		foundColours=foundColours+"orange: "
 		client.publish(topicName+"/orange", True)
 
-	matchobj= findHashTag('red')(data)
+	matchobj= findHashTag('red')(tweetcontent)
 	if matchobj:
 		foundColours=foundColours+"red: "	
 		client.publish(topicName+"/red", True)
