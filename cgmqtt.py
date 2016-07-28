@@ -30,11 +30,11 @@ def cgmqtt():
 	client.on_connect = on_connect	
 	client.connect("iot.eclipse.org", 1883, 60)
 	client.loop_start()
-	
-	data=request.args.get('tweetbody')
+	response=""
+	data=request.values.get('tweetbody')
 	#data="Hi I Like this Lamp #red#blue#green"
 	#print (data)
-	
+	response=response+data+"<br>"
 	foundColours=""
 	matchobj= findHashTag('violet')(data)
 	if matchobj:
@@ -71,8 +71,8 @@ def cgmqtt():
 		foundColours=foundColours+"red: "	
 		client.publish(topicName+"/red", True)
 		
-		
-	return ("foundColours: "+foundColours)
+	response=response+foundColours+"<br>"	
+	return (response)
 	
 	
 	
