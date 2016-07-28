@@ -31,9 +31,9 @@ def cgmqtt():
 	client.connect("iot.eclipse.org", 1883, 60)
 	client.loop_start()
 	response=""
-	data=request.form
+	data=request.data
 	#data="Hi I Like this Lamp #red#blue#green"
-	sys.stdout.write(data + "Data:\n")
+	sys.stdout.write("Data:\n")
 	#response=response+data+"<br>"
 	foundColours=""
 	matchobj= findHashTag('violet')(data)
