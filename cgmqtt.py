@@ -33,7 +33,7 @@ def cgmqtt():
 	response=""
 	data=request.form
 	#data="Hi I Like this Lamp #red#blue#green"
-	sys.stdout.write("Data:" + data + "\n")
+	sys.stdout.write(data + "Data:\n")
 	#response=response+data+"<br>"
 	foundColours=""
 	matchobj= findHashTag('violet')(data)
