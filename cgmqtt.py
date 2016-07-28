@@ -38,41 +38,41 @@ def cgmqtt():
 	foundColours=""
 	matchobj= findHashTag('violet')(data)
 	if matchobj:
-		#foundColours=foundColours+"violet: "
+		foundColours=foundColours+"violet: "
 		client.publish(topicName+"/violet", True)		
 
 	matchobj= findHashTag('indigo')(data)
 	if matchobj:
-		#foundColours=foundColours+"indigo: "
+		foundColours=foundColours+"indigo: "
 		client.publish(topicName+"/indigo", True)
 
 	matchobj= findHashTag('blue')(data)
 	if matchobj:
-		#foundColours=foundColours+"blue: "
+		foundColours=foundColours+"blue: "
 		client.publish(topicName+"/blue", True)
 
 	matchobj= findHashTag('green')(data)
 	if matchobj:
-		#foundColours=foundColours+"green: "
+		foundColours=foundColours+"green: "
 		client.publish(topicName+"/green", True)
 
 	matchobj= findHashTag('yellow')(data)
 	if matchobj:
-		#foundColours=foundColours+"yellow: "
+		foundColours=foundColours+"yellow: "
 		client.publish(topicName+"/yellow", True)
 
 	matchobj= findHashTag('orange')(data)
 	if matchobj:
-		#foundColours=foundColours+"orange: "
+		foundColours=foundColours+"orange: "
 		client.publish(topicName+"/orange", True)
 
 	matchobj= findHashTag('red')(data)
 	if matchobj:
-		#foundColours=foundColours+"red: "	
+		foundColours=foundColours+"red: "	
 		client.publish(topicName+"/red", True)
 		
 		
-	#return ("foundColours: "+foundColours)
+	return ("foundColours: "+foundColours)
 	
 	
 	
