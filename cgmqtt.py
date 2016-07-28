@@ -31,7 +31,7 @@ def cgmqtt():
 	client.connect("iot.eclipse.org", 1883, 60)
 	client.loop_start()
 	response=""
-	data=str(request.data)
+	data=request.form
 	#data="Hi I Like this Lamp #red#blue#green"
 	sys.stdout.write("Data:" + data + "\n")
 	#response=response+data+"<br>"
