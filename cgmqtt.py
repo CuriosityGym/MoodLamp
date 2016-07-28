@@ -23,7 +23,7 @@ def on_connect(client, userdata, flags, rc):
 
 	
 
-@app.route("/", methods=["GET"])	
+@app.route("/")	
 def cgmqtt():
 	
 	client = mqtt.Client()
